@@ -6,7 +6,7 @@ function AboutUs() {
 
   return (
     <>
-      <h1>About Us</h1>
+      <h2>About Us</h2>
     </>
   )
 }

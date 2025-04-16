@@ -6,7 +6,7 @@ function PostsList() {
 
   return (
     <>
-      <h1>Posts List</h1>
+      <h2>Posts List</h2>
     </>
   )
 }
