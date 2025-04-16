@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import Navbar from "./Navbar"
 
 
@@ -8,7 +10,7 @@ function Header() {
   return (
     <header>
       <div className="container">
-        <h1>React Blog Pages</h1>
+        <Link to="/"><h1>React Blog Pages</h1></Link>
         <Navbar />
       </div>
     </header>
