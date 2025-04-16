@@ -1,0 +1,59 @@
+/*** RESET ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/*** GLOBAL ***/
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #999999;
+}
+
+
+
+/*** HEADER ***/
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  padding: 14px;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
+.active {
+  color: #000000;
+  text-decoration: underline;
+}
+
+
+
+
+
+/*** MAIN ***/
+h2 {
+  text-align: center;
+}
