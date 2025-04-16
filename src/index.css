@@ -21,12 +21,17 @@ a {
   color: #999999;
 }
 
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 
 
 /*** HEADER ***/
-header {
+header .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px;
   margin-bottom: 30px;
 }
@@ -54,6 +59,11 @@ nav a:hover {
 
 
 /*** MAIN ***/
-h2 {
+main h2 {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+main li {
+  padding: 14px;
 }

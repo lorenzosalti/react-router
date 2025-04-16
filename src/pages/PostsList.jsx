@@ -19,7 +19,7 @@ function PostsList() {
     <main>
       <h2>Posts List</h2>
 
-      <ul>
+      <ul className="container">
         {postsList.map(post => <li key={post.id}>
           <h4>{post.title}</h4>
           <p>Autore: {users[post.userId - 1]}</p>

@@ -7,8 +7,10 @@ function Header() {
 
   return (
     <header>
-      <h1>React Blog Pages</h1>
-      <Navbar />
+      <div className="container">
+        <h1>React Blog Pages</h1>
+        <Navbar />
+      </div>
     </header>
   )
 }
