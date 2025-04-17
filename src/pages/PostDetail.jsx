@@ -1,17 +1,21 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
+// API url without id parameter
 const getPostsUrl = "https://jsonplaceholder.typicode.com/posts"
 
 
 function PostDetail() {
 
+  // dinamic parameter
   const { id } = useParams()
+
 
   const [post, setPost] = useState({})
 
   useEffect(() => {
+    // API get with dinamic parameter
     axios.get(`${getPostsUrl}/${id}`)
       .then(res => {
         console.log(res.data)
@@ -23,11 +27,18 @@ function PostDetail() {
 
 
 
-  return <div className="container">
-    <h2>{post.title}</h2>
-    <h4>Autore: {post.userId}</h4>
-    <p>{post.body}</p>
-  </div>
+  return <>
+    <div className="container">
+      <h2>{post.title}</h2>
+      <h4>Autore: {post.userId}</h4>
+      <p>{post.body}</p>
+    </div>
+
+    <div className="container">
+      <Link to={`/posts/${post.id - 1}`}>Post precedente</Link>
+      <Link to={`/posts/${post.id + 1}`}>Post successivo</Link>
+    </div>
+  </>
 
 
 }
