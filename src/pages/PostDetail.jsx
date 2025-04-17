@@ -15,7 +15,6 @@ function PostDetail() {
   const [post, setPost] = useState({})
   const [loading, setLoading] = useState(true)
 
-  const [dinamicParameter, setDinamicParameter] = useState(parseInt(id))
 
   useEffect(() => {
     setLoading(true)
@@ -23,22 +22,18 @@ function PostDetail() {
     axios.get(`${getPostsUrl}/${id}`)
       .then(res => {
         console.log(res.data)
-        console.log(dinamicParameter)
+        console.log(id)
         setPost(res.data)
       })
-      .catch(err => console.error(err))
-      .finally(setLoading(false))
-  }, [dinamicParameter])
+      .catch(err => {
+        console.error(err)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
 
-  const handlePrevious = () => {
-    if (dinamicParameter === 1) return
-    setDinamicParameter(dinamicParameter - 1)
-  }
+  }, [id])
 
-  const handleNext = () => {
-    if (dinamicParameter === 100) return
-    setDinamicParameter(dinamicParameter + 1)
-  }
 
   if (loading) return <div className="container"><h3>Caricamento in corso...</h3></div>
 
@@ -51,8 +46,8 @@ function PostDetail() {
     </div>
 
     <div className="container">
-      <Link to={`/posts/${post.id - 1}`} onClick={handlePrevious}>Post precedente</Link>
-      <Link to={`/posts/${post.id + 1}`} onClick={handleNext}>Post successivo</Link>
+      <Link to={`/posts/${post.id - 1}`}>Post precedente</Link>
+      <Link to={`/posts/${post.id + 1}`}>Post successivo</Link>
     </div>
   </>
 
