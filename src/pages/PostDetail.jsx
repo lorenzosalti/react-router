@@ -3,7 +3,7 @@
 function PostDetail() {
 
 
-  return <h1>Dettaglio di un Post specifico</h1>
+  return <h2>Dettaglio di un Post specifico</h2>
 
 
 }

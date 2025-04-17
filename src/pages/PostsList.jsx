@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 
 const getPostsUrl = "https://jsonplaceholder.typicode.com/posts"
@@ -21,7 +22,7 @@ function PostsList() {
 
       <ul className="container">
         {postsList.map(post => <li key={post.id}>
-          <h4>{post.title}</h4>
+          <Link to={`/posts/${post.id}`}><h4>{post.title}</h4></Link>
           <p>Autore: {users[post.userId - 1]}</p>
         </li>)}
       </ul>
