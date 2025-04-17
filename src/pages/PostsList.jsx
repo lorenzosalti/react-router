@@ -16,7 +16,7 @@ function PostsList() {
   }, [])
 
   return (
-    <main>
+    <>
       <h2>Posts List</h2>
 
       <ul className="container">
@@ -25,7 +25,7 @@ function PostsList() {
           <p>Autore: {users[post.userId - 1]}</p>
         </li>)}
       </ul>
-    </main>
+    </>
   )
 }
 
